@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.DepartmentTrainDAO" >
+    <select id="findAll" resultType="com.swjtu.hrms.entity.DepartmentTrain">
+        select * from department_train where dep_id=(select dep_id from staff where staff_id=#{staffId}) order by train_date desc
+    </select>
+    <insert id="insertNew" parameterType="com.swjtu.hrms.entity.DepartmentTrain">
+        insert into department_train values(#{trainId},#{depId},#{trainName},#{trainDate},#{trainDays},#{trainAddress},#{lecturer},#{staffNum})
+    </insert>
+    <update id="alterField" parameterType="com.swjtu.hrms.model.AlterFieldInfo">
+        update department_train set ${field}=#{value} where train_id=#{pk}
+    </update>
+    <!--查找登录用户的部门号-->
+    <select id="findTheDepId" resultType="com.swjtu.hrms.model.TheDepId">
+        select dep_id from staff where staff_id=#{staffId}
+    </select>
+</mapper>

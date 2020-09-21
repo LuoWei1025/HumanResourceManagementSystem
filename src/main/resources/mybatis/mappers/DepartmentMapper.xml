@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.DepartmentDAO" >
+    <select id="showUserDepInfo" resultType="com.swjtu.hrms.entity.Department">
+       select * from  staff_dep_view_1 where staff_id = #{staffId}
+    </select>
+
+    <update id="updataDep">
+        update department set dep_name = #{depName},address = #{address},contact_num = #{contactNum} where department_id = #{departmentId}
+    </update>
+</mapper>

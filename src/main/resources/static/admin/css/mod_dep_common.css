@@ -1,0 +1,8 @@
+/* This is the common style-sheet for department module */
+
+body {
+    background-image: url(../img/bg14.jpg);
+    /* background-color: rgb(4, 19, 40); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}

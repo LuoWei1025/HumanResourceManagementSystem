@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>返聘管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_common.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_rehire.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/rehire_manage.js"></script>
+</head>
+<body>
+    <div class="card rehire_manage">
+        <h2>返聘管理</h2>
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">教职工号</label>
+                <div class="layui-input-block">
+                    <input type="username" name="staffId" placeholder="教职工号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-block">
+                    <input type="username" name="name" placeholder="姓名" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">部门序号</label>
+                <div class="layui-input-block">
+                    <input type="username" name="depId" placeholder="部门序号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">岗位序号</label>
+                <div class="layui-input-block">
+                    <input type="username" name="posId" placeholder="岗位序号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号类型</label>
+                <div class="layui-input-block">
+                    <input type="username" name="accountType" placeholder="账号类型" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">入职时间</label>
+                <div class="layui-input-block">
+                    <input type="date" name="fromDate" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">合同期限</label>
+                <div class="layui-input-block">
+                    <input type="date" name="toDate" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="rms">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

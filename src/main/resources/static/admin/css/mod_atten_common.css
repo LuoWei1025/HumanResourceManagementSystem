@@ -1,0 +1,8 @@
+/* This is the common style-sheet for attendance management module */
+
+body {
+    background-image: url(../img/bg18.jpg);
+    background-color: rgb(8, 8, 20);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

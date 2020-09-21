@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>校内调动管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_common.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_inttrans.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/posi_transfer_manage.js"></script>
+</head>
+<body>
+    <div class="card posi_transfor_manage">
+        <h2>人员调动记录</h2>
+        <div class="ptm_content">
+            <div>
+                <table class="layui-table" lay-data="{url:'/staff_transfer_record/list', page:true, id:'tabptm'}" lay-filter="tabptm">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'transId'}">调动序号</th>
+                        <th lay-data="{field:'stId', edit: 'text'}">教职工序号</th>
+                        <th lay-data="{field:'transferDate', edit: 'text'}">调动时间</th>
+                        <th lay-data="{field:'originalPosition', edit: 'text'}">原岗位</th>
+                        <th lay-data="{field:'afterPosition', edit: 'text'}">调动后岗位</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <button id="addTable" class="layui-btn">添加</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>部门岗位编制管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_dep_common.css">
+    <link rel="stylesheet" href="admin/css/mod_dep_position.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/staff.js"></script>
+</head>
+<body>
+    <div class="card dep_position">
+        <div class="tip">
+            注：添加岗位记录后，需前往薪酬计算界面添加对应薪酬计算方式。
+        </div>
+        <h2>岗位编制管理</h2>
+        <div class="dp_content">
+            <table class="layui-table" lay-data="{url:'/position/list', page:true, id:'tabdpm'}" lay-filter="tabdpm">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'posId'}">岗位序号</th>
+                    <th lay-data="{field:'positionId', edit: 'text'}">岗位号</th>
+                    <th lay-data="{field:'positionName', edit: 'text'}">岗位名称</th>
+                    <th lay-data="{field:'depId', edit: 'text'}">部门序号</th>
+                    <th lay-data="{field:'depName'}">部门名</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <button id="addTabdpm" class="layui-btn">添加</button>
+    </div>
+</body>
+</html>

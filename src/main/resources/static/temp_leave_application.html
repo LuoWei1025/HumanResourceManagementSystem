@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请假申请</title>
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/temp_leave_application.js"></script>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_templeave.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_common.css">
+</head>
+<body>
+    <div class="card temp_leave">
+        <h2>用户请假申请</h2>
+        <form class="layui-form" action="" method="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">教职工账号</label>
+                <div class="layui-input-block">
+                    <input type="username" name="staffId" placeholder="教职工账号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请假时间</label>
+                <div class="layui-input-block">
+                    <input type="date" name="leaveDate" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">请假时长</label>
+                <div class="layui-input-block">
+                    <input type="username" name="leaveDays" placeholder="天数" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">请假事由</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" name= "leaveReason" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button style="width: 100%" class="layui-btn" lay-submit lay-filter="tls">立即提交</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

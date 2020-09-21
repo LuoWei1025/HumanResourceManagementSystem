@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.SalaryCalculateDAO" >
+    <select id="findAll" resultType="com.swjtu.hrms.entity.SalaryCalculate">
+        select sal_id,s.pos_id,position_id,position_name,salary_amount,absence_step,overtime_step
+        from salary_calculate s,position p
+        where s.pos_id = p.pos_id
+    </select>
+
+    <select id="loadUserSalaryByUsername" resultType="com.swjtu.hrms.entity.UserSalary">
+        select * from staff_salary_view_1 where staff_id = #{staffId}
+    </select>
+
+    <insert id="insertNew" parameterType="com.swjtu.hrms.entity.SalaryCalculate">
+        insert into salary_calculate values(#{salId},#{posId},#{salaryAmount},#{absenceStep},#{overtimeStep})
+    </insert>
+
+    <update id="alterField" parameterType="com.swjtu.hrms.model.AlterFieldInfo">
+        update salary_calculate set ${field}=#{value} where sal_id=#{pk}
+    </update>
+
+    <!--查找尚未设置薪酬计算方式的岗位号-->
+    <select id="findUsefulPosId" resultType="com.swjtu.hrms.model.UsefulPosId">
+        select pos_id from position where pos_id not in (select pos_id from salary_calculate)
+    </select>
+</mapper>

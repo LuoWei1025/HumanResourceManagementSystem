@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.StaffDAO" >
+    <select id="loadUserByStaffId" resultType="com.swjtu.hrms.entity.Staff">
+        select * from staff where staff_id=#{staffId}
+    </select>
+    <select id="loadStaffByStaffId" resultType="com.swjtu.hrms.entity.Staff">
+        select * from staff s,position p,department d
+        where staff_id=#{staffId} and s.dep_id=d.dep_id and s.pos_id=p.pos_id
+    </select>
+    <update id="updataStaff" parameterType="com.swjtu.hrms.entity.Staff">
+        update staff set name=#{name},gender=#{gender},nation=#{nation}
+            ,political_status=#{politicalStatus},birth_date=#{birthDate}
+            ,contact_num=#{contactNum}
+            where staff_id=#{staffId}
+    </update>
+
+    <insert id="insertRegisterInfo">
+        insert into staff (dep_id,pos_id,staff_id,name,gender,birth_date,edu_background,
+        nation,political_status,contact_num,password,account_type,from_date,to_date,entry_type)
+        values (#{depId},#{posId},#{staffId},#{name},"F","19990101","硕士",
+        "汉","群众","11111111111","$2a$10$FXiAGyqszUvxeWC2B893JO7iokqRUU0YKhACi3BTYGht7WccbpcDK",#{accountType},#{fromDate},#{toDate},"普通")
+    </insert>
+
+    <insert id="insertRehireInfo">
+        insert into staff (dep_id,pos_id,staff_id,name,gender,birth_date,edu_background,
+        nation,political_status,contact_num,password,account_type,from_date,to_date,entry_type)
+        values (#{depId},#{posId},#{staffId},#{name},"F","19990101","硕士",
+        "汉","群众","11111111111","$2a$10$FXiAGyqszUvxeWC2B893JO7iokqRUU0YKhACi3BTYGht7WccbpcDK",#{accountType},#{fromDate},#{toDate},"返聘")
+    </insert>
+</mapper>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>人事管理员请假管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_common.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_temp_leave.css">
+
+    <script src="admin/js/staff.js"></script>
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/temp_leave_manage.js"></script>
+</head>
+<body>
+    <div class="card temp_leave_manage">
+        <h2>人事管理员请假管理</h2>
+        <div class="tlm_content">
+            <div>
+                <table class="layui-table" lay-data="{url:'/leave_application/list', page:true, id:'tabtlm'}" lay-filter="tabtlm">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'lvId'}">请假序号</th>
+                        <th lay-data="{field:'staffId'}">教职工号</th>
+                        <th lay-data="{field:'name'}">教职工名</th>
+                        <th lay-data="{field:'leaveDate'}">请假日期</th>
+                        <th lay-data="{field:'leaveDays'}">请假时长</th>
+                        <th lay-data="{field:'leaveReason'}">请假事由</th>
+                        <th lay-data="{field:'status', edit: 'text'}">审核状态</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

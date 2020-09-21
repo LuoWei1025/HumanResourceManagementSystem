@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>薪酬自助查询</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_salary_common.css">
+    <link rel="stylesheet" href="admin/css/mod_salary_query.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/staff_salary.js"></script>
+</head>
+<body>
+    <div class="card salary_query">
+        <h2>个人薪酬</h2>
+        <div class="salary_content">
+            <form class="layui-form" action="" lay-filter="perinfo">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">基本工资</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="salary_amount" placeholder="基本工资" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">加班工资</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="overtime_step" placeholder="加班工资" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">被扣工资</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="abscence_step" placeholder="缺勤被扣工资" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">总薪酬</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="totalsalary" placeholder="总薪酬" class="layui-input" readonly>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

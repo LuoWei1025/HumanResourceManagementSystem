@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>部门基本信息管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_dep_common.css">
+    <link rel="stylesheet" href="admin/css/mod_dep_info.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="admin/js/staff_dep.js"></script>
+</head>
+<body>
+    <div class="card dep-info">
+        <h2>部门基本信息</h2>
+
+        <form class="layui-form" action="" lay-filter="perinfo">
+            <div class="layui-form-item">
+                <label class="layui-form-label">部门号</label>
+                <div class="layui-input-block">
+                    <input type="username" name="departmentId" placeholder="部门号" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">部门名称</label>
+                <div class="layui-input-block">
+                    <input type="username" name="depName" placeholder="部门名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">联系电话</label>
+                <div class="layui-input-block">
+                    <input type="username" name="contactNum" placeholder="联系电话" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">部门地址</label>
+                <div class="layui-input-block">
+                    <input type="username" name="address" placeholder="部门地址" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="ls">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

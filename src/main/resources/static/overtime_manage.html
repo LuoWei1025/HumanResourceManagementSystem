@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>加班管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_common.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_overtime.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/overtime_manage.js"></script>
+</head>
+<body>
+    <div class="card overtime_manage">
+        <h2>人事管理员加班管理</h2>
+        <div class="om_content">
+            <div>
+                <table class="layui-table" lay-data="{url:'/overtime_record/list', page:true, id:'tabom'}" lay-filter="tabom">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'otId'}">加班序号</th>
+                        <th lay-data="{field:'stId', edit: 'text'}">教职工序号</th>
+                        <th lay-data="{field:'staffId'}">教职工号</th>
+                        <th lay-data="{field:'name'}">教职工姓名</th>
+                        <th lay-data="{field:'overtimeDate', edit: 'text'}">加班日期</th>
+                        <th lay-data="{field:'overtimeHours', edit: 'text'}">加班时长</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <button id="addTable" class="layui-btn">添加</button>
+        </div>
+    </div>
+</body>
+</html>

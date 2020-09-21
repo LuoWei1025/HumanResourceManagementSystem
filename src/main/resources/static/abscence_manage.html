@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>缺勤管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_common.css">
+    <link rel="stylesheet" href="admin/css/mod_atten_abscence.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/abscence_manage.js"></script>
+</head>
+<body>
+    <!--表单样式-->
+    <script type="text/html" id="switchTpl">
+        <input type="checkbox" name="status" value="{{d.attId}}" lay-skin="switch" lay-text="出勤|缺勤" lay-filter="attenType" {{d.type=='出勤'?'checked':''}}>
+    </script>
+
+    <div class="card abscence_manage">
+        <h2>人事管理员缺勤管理</h2>
+        <div class="am_content">
+            <div>
+                <table class="layui-table" lay-data="{url:'/attendance_record/list', page:true, id:'tabam'}" lay-filter="tabam">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'attId'}">考勤序号</th>
+                        <th lay-data="{field:'staffId'}">教职工号</th>
+                        <th lay-data="{field:'name'}">教职工名</th>
+                        <th lay-data="{field:'attendanceDate'}">考勤时间</th>
+                        <th lay-data="{field:'type',templet: '#switchTpl'}">考勤结果</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

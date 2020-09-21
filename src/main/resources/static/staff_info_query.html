@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>教职工基本信息查询</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_staff_common.css">
+    <link rel="stylesheet" href="admin/css/mod_staff_info.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="common/layui/layui.js"></script>
+</head>
+
+<body>
+    <div class="card info">
+        <h2>个人信息展示</h2>
+        <!--左栏-->
+        <form class="layui-form" action="" lay-filter="perinfo">
+            <div class="col-2">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">教职工号</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="staffId" placeholder="教职工账号" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="name" placeholder="姓名" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性别</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="gender" placeholder="男" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">民族</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="nation" placeholder="民族" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">政治面貌</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="politicalStatus" placeholder="政治面貌" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">生日</label>
+                    <div class="layui-input-block">
+                        <input type="date" name="birthDate" placeholder="生日" class="layui-input">
+                    </div>
+                </div>
+            </div>
+
+            <!--右栏-->
+            <div class="col-2">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">联系电话</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="contactNum" placeholder="联系电话" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">部门</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="depName" placeholder="部门" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">岗位</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="positionName" placeholder="岗位" class="layui-input" readonly>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">入职时间</label>
+                    <div class="layui-input-block">
+                        <input type="date" name="fromDate" placeholder="入职时间" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">合同期限</label>
+                    <div class="layui-input-block">
+                        <input type="date" name="toDate" placeholder="合同期限" class="layui-input" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">角色</label>
+                    <div class="layui-input-block">
+                        <input type="username" name="accountType" placeholder="角色" class="layui-input" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="ls">立即提交</button>
+        </form>
+    </div>
+    <script src="admin/js/staff_info_query.js"></script>
+</body>
+
+<footer>
+    </br>
+    </br>
+</footer>
+</html>

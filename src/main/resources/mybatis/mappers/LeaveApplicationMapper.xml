@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.LeaveApplicationDAO" >
+    <select id="findAll" resultType="com.swjtu.hrms.entity.LeaveApplication">
+        select lv_id,l.st_id,staff_id,name,leave_date,leave_reason,leave_days,status
+        from leave_application as l,staff as s
+        where l.st_id = s.st_id order by leave_date desc
+    </select>
+    <insert id="insertTempLeaveApplication">
+        insert into leave_application (st_id,leave_date,leave_reason,leave_days,status)
+        values (#{stId},#{leaveDate},#{leaveReason},#{leaveDays},"审核中")
+    </insert>
+    <select id="findstId" resultType="String">
+        select st_id from staff where staff_id=#{staffId}
+    </select>
+    <update id="alterField" parameterType="com.swjtu.hrms.model.AlterFieldInfo">
+        update leave_application set ${field}=#{value} where lv_id=#{pk}
+    </update>
+</mapper>

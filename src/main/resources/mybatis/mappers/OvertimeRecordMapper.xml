@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.OvertimeRecordDAO" >
+    <select id="findAll" resultType="com.swjtu.hrms.entity.OvertimeRecord">
+        select ot_id,o.st_id,staff_id,name,overtime_date,overtime_hours
+        from overtime_record as o,staff as s
+        where o.st_id = s.st_id order by overtime_date desc
+    </select>
+    <insert id="insertNew" parameterType="com.swjtu.hrms.entity.OvertimeRecord">
+        insert into overtime_record values(#{otId},#{stId},#{overtimeDate},#{overtimeHours})
+    </insert>
+    <select id="findByStaffId" resultType="com.swjtu.hrms.entity.OvertimeRecord">
+        select ot_id,o.st_id,staff_id,name,overtime_date,overtime_hours
+        from overtime_record as o,staff as s
+        where o.st_id = s.st_id and staff_id = #{staffId}
+    </select>
+    <update id="alterField" parameterType="com.swjtu.hrms.model.AlterFieldInfo">
+        update overtime_record set ${field}=#{value} where ot_id=#{pk}
+    </update>
+</mapper>

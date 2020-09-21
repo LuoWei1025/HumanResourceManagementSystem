@@ -1,0 +1,11 @@
+.register_manage{
+    width: 70%;
+}
+
+.layui-form{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.layui-btn {
+    float: right;
+}

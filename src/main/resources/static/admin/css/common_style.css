@@ -1,0 +1,44 @@
+.card {
+    background: #fff;
+    box-shadow: 0px 0px 15px #ccc;
+    margin: 0 auto;
+    padding: 60px 80px;
+    margin-top: 5%;
+}
+
+.card h2 {
+    font-size: 38px;
+    font-weight: 100;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px
+}
+
+.col-2 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.layui-form hr {
+    margin-top: 5%;
+}
+
+.layui-input-block{
+    width: 70%;
+}
+
+.layui-btn{
+    /* float: right; */
+    display: block;
+    margin: 0 auto;
+}
+
+.ltab,.rtab{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.layui-table-page{
+    background-color: ivory;
+}

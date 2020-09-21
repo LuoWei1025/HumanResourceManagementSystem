@@ -1,0 +1,19 @@
+.salary_calculate{
+    width: 70%;
+}
+
+.sc_content{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.layui-table{
+    width: 100%;
+}
+
+.tip {
+    position: absolute;
+    margin-left: -60px;
+    margin-top: -50px;
+}

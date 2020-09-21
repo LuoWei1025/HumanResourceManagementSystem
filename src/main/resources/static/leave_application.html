@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>离职申请</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_staff_common.css">
+    <link rel="stylesheet" href="admin/css/mod_staff_leave.css">
+    <script src="common/layui/layui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="admin/js/quit_application.js"></script>
+</head>
+
+<body>
+    <div class="card leave">
+        <h2>用户离职申请书</h2>
+        <form class="layui-form" action="" method="" lay-filter="perinfo">
+            <div class="layui-form-item">
+                <label class="layui-form-label">教职工账号</label>
+                <div class="layui-input-block">
+                    <input type="username" name="staffId" placeholder="教职工账号" class="layui-input" readonly>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">申请时间</label>
+                <div class="layui-input-block">
+                    <input type="date" name="quitDate" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">离职理由</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" name= "quitReason" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button style="width: 100%" class="layui-btn" lay-submit lay-filter="ls">立即提交</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

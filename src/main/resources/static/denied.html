@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>拒绝页面</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <script src="common/layui/layui.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</head>
+<body class="is-preload landing">
+    <h1 style="color: deepskyblue">抱歉，您没有该模块的操作权限！！！</h1>
+
+<!-- Scripts -->
+<script>
+    layui.use('layer', function () {
+        var layer = layui.layer;
+        layer.open({
+            title: '无该模块权限'
+            ,content: '<div style="color:#000000;" align="center">'+'无法打开页面'+'</div>'
+            ,btn: '关闭'
+            ,btnAlign: 'c' //按钮居中
+            ,shade: 0 //不显示遮罩
+            ,yes: function(){
+                layer.closeAll();
+            }
+        });
+    })
+</script>
+</body>
+
+</html>

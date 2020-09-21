@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>离校管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_common.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_leave.css">
+    
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/leave_manage.js"></script>
+</head>
+<body>
+    <!--表单样式-->
+    <script type="text/html" id="switchTpl">
+        <input type="checkbox" name="status" value="{{d.qId}}" lay-skin="switch" lay-text="通过|审核中" lay-filter="leaveStatus" {{d.status=='通过'?'checked':''}}>
+    </script>
+
+    <div class="card quit_manage">
+        <h2>离职申请审核</h2>
+        <div class="qm_content">
+            <div>
+                <table class="layui-table" lay-data="{url:'/quit_application/list', page:true, id:'tabqm'}" lay-filter="tabqm">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'qId'}">离职序号</th>
+                        <th lay-data="{field:'staffId'}">教职工号</th>
+                        <th lay-data="{field:'name'}">姓名</th>
+                        <th lay-data="{field:'quitDate'}">离职申请时间</th>
+                        <th lay-data="{field:'quitReason'}">离职缘由</th>
+                        <th lay-data="{field:'status', templet: '#switchTpl'}">审核状态</th>    <!--'审核中','通过'-->
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

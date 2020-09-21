@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>退休管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_common.css">
+    <link rel="stylesheet" href="admin/css/mod_trans_retire.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/retire_manage.js"></script>
+</head>
+<body>
+    <div class="card retire_manage">
+        <h2>退休管理</h2>
+        <div class="rm_content">
+            <div>
+                <table class="layui-table" lay-data="{url:'/retirement_record/list', page:true, id:'tabrm'}" lay-filter="tabrm">
+                    <thead>
+                    <tr>
+                        <th lay-data="{field:'retId'}">退休序号</th>
+                        <th lay-data="{field:'stId', edit: 'text'}">教职工序号</th>
+                        <th lay-data="{field:'staffId'}">教职工号</th>
+                        <th lay-data="{field:'name'}">姓名</th>
+                        <th lay-data="{field:'retirementDate', edit: 'text'}">退休日期</th>
+                        <th lay-data="{field:'retirementAge', edit: 'text'}">退休年龄</th>
+                        <th lay-data="{field:'workYears', edit: 'text'}">任职时长</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <button id="addTable" class="layui-btn">添加</button>
+        </div>
+    </div>
+</body>
+</html>

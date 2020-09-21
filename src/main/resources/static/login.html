@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>登陆页面</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/login.css">
+    <script src="common/layui/layui.js"></script>
+</head>
+
+<body id="login">
+<div class="login">
+    <h2>SWJTUHRMS</h2>
+    <form class="layui-form" method="post" target="_self" action="/loginform" id="myForm">
+        <div class="layui-form-item">
+            <input type="username" name="username" id="username" placeholder="账号" class="layui-input">
+            <i class="layui-icon input-icon">&#xe66f;</i>
+        </div>
+        <div class="layui-form-item">
+            <input type="password" name="password" id="password" placeholder="密码"  class="layui-input">
+            <i class="layui-icon input-icon">&#xe673;</i>
+        </div>
+        <div class="layui-form-item">
+            <input type="checkbox" name="box" id="remember" lay-skin="primary" title="记住密码" checked=""> <a class="back" href="javascript:;"  style="margin-top: 10px">忘记密码</a>
+        </div>
+        <div class="layui-btn-container">
+            <button style="width: 100%" class="layui-btn" lay-submit lay-filter="login">立即登录</button>
+            <!--
+            <button style="width: 100%" class="layui-btn" lay-submit lay-filter="register">用户注册</button>
+            -->
+        </div>
+    </form>
+
+    <script>
+        var url = document.URL;
+        if(url.search("error")!==-1) {
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.open({
+                    title: '登录失败'
+                    ,content: '<div style="padding: 10px 60px;">'+'用户名或密码错误'+'</div>'
+                    ,btn: '关闭'
+                    ,anim: 2
+                    ,btnAlign: 'c' //按钮居中
+                    ,shade: 0 //不显示遮罩
+                    ,yes: function(){
+                        layer.closeAll();
+                    }
+                });
+            })
+        }
+        <!--
+         layui.use('form', function () {
+            var form = layui.form,
+                layer = layui.layer,
+                $ = layui.jquery;
+
+
+            form.on('submit(register)', function (data) {
+                layer.load({
+                    shade: 0.5,
+                    time: 0,
+                });
+                setTimeout(function () {
+                    window.location.href = 'register.html';
+                },1000)
+                return false;
+            })
+        });
+        -->
+        window.onload = function(){
+            var oForm = document.getElementById('myForm');
+            var oUser = document.getElementById('username');
+            var oPswd = document.getElementById('password');
+            var oRemember = document.getElementById('remember');
+            //页面初始化时，如果帐号密码cookie存在则填充
+            if (getCookie('username') && getCookie('password')) {
+                oUser.value = getCookie('username');
+                oPswd.value = getCookie('password');
+                oRemember.checked = true;
+            }
+            //复选框勾选状态发生改变时，如果未勾选则清除cookie
+            oRemember.onchange = function() {
+                if (!this.checked) {
+                    delCookie('username');
+                    delCookie('password');
+                }
+            };
+
+            //表单提交事件触发时，如果复选框是勾选状态则保存cookie
+            oForm.onsubmit = function() {
+                if (remember.checked) {
+                    setCookie('username', oUser.value, 7); //保存帐号到cookie，有效期7天
+                    setCookie('password', oPswd.value, 7); //保存密码到cookie，有效期7天
+                }
+            };
+        };
+        //设置cookie
+        function setCookie(name, value, day) {
+            var date = new Date();
+            date.setDate(date.getDate() + day);
+            document.cookie = name + '=' + value + ';expires=' + date;
+        };
+        //获取cookie
+        function getCookie(name) {
+            var reg = RegExp(name + '=([^;]+)');
+            var arr = document.cookie.match(reg);
+            if (arr) {
+                return arr[1];
+            } else {
+                return '';
+            }
+        };
+        //删除cookie
+        function delCookie(name) {
+            setCookie(name, null, -1);
+        };
+
+
+    </script>
+</div>
+</body>
+
+</html>

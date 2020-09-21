@@ -1,0 +1,15 @@
+.dep_position{
+    width: 70%;
+}
+
+.dp_content{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.tip {
+    position: absolute;
+    margin-left: -60px;
+    margin-top: -50px;
+}

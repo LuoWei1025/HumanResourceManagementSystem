@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.StaffTransferRecordDAO" >
+    <select id="findAll" resultType="com.swjtu.hrms.entity.StaffTransferRecord">
+        select * from staff_transfer_record order by transfer_date desc
+    </select>
+    <insert id="insertNew" parameterType="com.swjtu.hrms.entity.StaffTransferRecord">
+        insert into staff_transfer_record values(#{transId},#{stId},#{transferDate},#{originalPosition},#{afterPosition})
+    </insert>
+    <update id="alterField" parameterType="com.swjtu.hrms.model.AlterFieldInfo">
+        update staff_transfer_record set ${field}=#{value} where trans_id=#{pk}
+    </update>
+</mapper>

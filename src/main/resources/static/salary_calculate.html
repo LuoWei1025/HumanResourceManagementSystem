@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>薪酬计算</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_salary_common.css">
+    <link rel="stylesheet" href="admin/css/mod_salary_calc.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/staff.js"></script>
+</head>
+<body>
+    <div class="card salary_calculate">
+        <div class="tip">
+            注：添加薪酬计算后，会添加一条新的记录，该记录对应岗位号未分配薪酬计算方式。<br/>所以在添加薪酬计算方式之前需首先在岗位编制管理页面添加记录。
+        </div>
+        <h2>薪酬计算方式</h2>
+        <div class="sc_content">
+            <table class="layui-table" lay-data="{url:'/salary_calculate/list',initSort:{field:'salId', type:'asc'}, page:true, id:'tabsc'}" lay-filter="tabsc">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'salId'}">薪酬序号</th>
+                    <th lay-data="{field:'posId'}">岗位序号</th>
+                    <th lay-data="{field:'positionId'}">岗位号</th>
+                    <th lay-data="{field:'positionName',minWidth:200}">岗位名</th>
+                    <th lay-data="{field:'overtimeStep',edit:'text'}">加班累加步进</th>
+                    <th lay-data="{field:'absenceStep',edit:'text'}">缺勤累减步进</th>
+                    <th lay-data="{field:'salaryAmount',edit:'text'}">总薪酬</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <button id="addTabsc" class="layui-btn">添加</button>
+    </div>
+</body>
+</html>

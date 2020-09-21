@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.swjtu.hrms.dao.QuitApplicationDAO" >
+    <select id="findAll" resultType="com.swjtu.hrms.entity.QuitApplication">
+        select * from staff_quite_view_1 order by quit_date desc
+    </select>
+    <insert id="insertQuitApplication">
+        insert into quit_application (st_id,quit_date,quit_reason,status)
+        values (#{stId},#{quitDate},#{quitReason},"审核中")
+    </insert>
+    <select id="findstId" resultType="String">
+        select st_id from staff where staff_id=#{staffId}
+    </select>
+    <update id="alterField" parameterType="com.swjtu.hrms.model.AlterFieldInfo">
+        update quit_application set ${field}=#{value} where q_id=#{pk}
+    </update>
+</mapper>

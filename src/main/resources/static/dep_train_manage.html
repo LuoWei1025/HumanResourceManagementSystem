@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>培训管理</title>
+    <link rel="stylesheet" href="common/layui/css/layui.css">
+    <link rel="stylesheet" href="admin/css/common_style.css">
+    <link rel="stylesheet" href="admin/css/mod_dep_common.css">
+    <link rel="stylesheet" href="admin/css/mod_dep_train.css">
+
+    <script src="common/layui/layui.js"></script>
+    <script src="admin/js/staff.js"></script>
+</head>
+
+<body>
+    <div class="card dep_train">
+        <h2>培训信息管理</h2>
+        <div class="dt_content">
+            <table class="layui-table" lay-data="{url:'/department_train/list', page:true,id:'tabdtm'}" lay-filter="tabdtm">
+                <thead>
+                <tr>
+                    <th lay-data="{field:'trainId'}">培训序号</th>
+                    <th lay-data="{field:'depId'}">部门序号</th>
+                    <th lay-data="{field:'trainName', edit: 'text'}">培训名称</th>
+                    <th lay-data="{field:'trainDate', edit: 'text'}">培训日期</th>
+                    <th lay-data="{field:'trainAddress', edit: 'text'}">培训地点</th>
+                    <th lay-data="{field:'trainDays', edit: 'text'}">培训时长</th>
+                    <th lay-data="{field:'lecturer', edit: 'text'}">讲师</th>
+                    <th lay-data="{field:'staffNum', edit: 'text'}">名额</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <button id="addTabdtm" class="layui-btn">添加</button>
+    </div>
+</body>
+</html>
