@@ -1,1 +1,1 @@
-# swjtu_hrms
+# HumanResourceManagementsystem
